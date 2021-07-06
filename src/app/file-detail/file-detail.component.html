@@ -1,1 +1,28 @@
-<p>file-detail works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Consumo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Coste</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ row.Fecha }}</td>
+      <td>{{ row.Hora }}</td>
+      <td>{{ row.Consumo }}</td>
+      <td>{{ row.Precio }}</td>
+      <td>{{ row.Coste }}</td>
+      <td>
+        <a routerLink="/file/{{ name }}/{{ i + 1 }}">
+          <button type="button" class="btn btn-primary">Edit</button>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -36,6 +36,6 @@ export class InvoiceService {
 
     return this.http
       .put(url, invoice, this.httpOptions)
-      .pipe(tap((_) => console.log(`updated hero id=${invoice._id}`)));
+      .pipe(tap((_) => console.log(`updated invoice id=${invoice._id}`)));
   }
 }

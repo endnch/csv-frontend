@@ -8,6 +8,7 @@ import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.componen
 import { FilesComponent } from './files/files.component';
 import { UploadComponent } from './upload/upload.component';
 import { FileDetailComponent } from './file-detail/file-detail.component';
+import { FileRowComponent } from './file-row/file-row.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/invoices', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'invoice/:id', component: InvoiceDetailComponent },
   { path: 'files', component: FilesComponent },
   { path: 'file/:name', component: FileDetailComponent },
+  { path: 'file/:name/:index', component: FileRowComponent },
   { path: 'upload', component: UploadComponent },
 ];
 
