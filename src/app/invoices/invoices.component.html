@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Consumo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Coste</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let invoice of invoices; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ invoice.date }}</td>
+      <td>{{ invoice.hour }}</td>
+      <td>{{ invoice.consumption }}</td>
+      <td>{{ invoice.price }}</td>
+      <td>{{ invoice.costPerHour }}</td>
+      <td>
+        <a routerLink="/invoice/{{ invoice._id }}">
+          <button type="button" class="btn btn-primary">Edit</button>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
