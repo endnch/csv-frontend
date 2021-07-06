@@ -14,6 +14,9 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.component';
+import { FilesComponent } from './files/files.component';
+import { UploadComponent } from './upload/upload.component';
+import { FileDetailComponent } from './file-detail/file-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { InvoiceDetailComponent } from './invoice-detail/invoice-detail.componen
     DashboardComponent,
     InvoicesComponent,
     InvoiceDetailComponent,
+    FilesComponent,
+    UploadComponent,
+    FileDetailComponent,
   ],
   imports: [
     BrowserModule,
