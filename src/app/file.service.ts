@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { Invoice } from './invoice';
 import { Row } from './row';
 
 @Injectable({
@@ -63,5 +62,23 @@ export class FileService {
         this.httpOptions
       )
       .pipe(tap((_) => console.log(`updated row name=${name} index=${index}`)));
+  }
+
+  deleteRow(name: string, index: number): Observable<any> {
+    if (index < 1) {
+      throw new Error('Invalid index');
+    }
+
+    const url = `http://localhost:8000/api/csv/store/${index}/${name}`;
+
+    return this.http
+      .put(
+        url,
+        {
+          method: 'DELETE',
+        },
+        this.httpOptions
+      )
+      .pipe(tap((_) => console.log(`deleted row name=${name} index=${index}`)));
   }
 }

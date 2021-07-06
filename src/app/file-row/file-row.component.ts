@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FileService } from '../file.service';
 import { Row } from '../row';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-file-row',
@@ -14,7 +15,8 @@ export class FileRowComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private fileService: FileService
+    private fileService: FileService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,18 @@ export class FileRowComponent implements OnInit {
     if (this.row !== undefined && name !== null && this.index !== undefined) {
       this.fileService
         .updateRow(this.row, name, this.index)
-        .subscribe(() => console.log('Invoice updated'));
+        .subscribe(() => console.log('Row updated'));
+    }
+  }
+
+  delete(index: number | undefined): void {
+    const name = this.route.snapshot.paramMap.get('name');
+
+    if (name !== null && index !== undefined) {
+      this.fileService.deleteRow(name, index).subscribe(() => {
+        console.log('Row deleted');
+        this.location.back();
+      });
     }
   }
 }
