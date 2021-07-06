@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">id</th>
       <th scope="col">Fecha</th>
       <th scope="col">Hora</th>
       <th scope="col">Consumo</th>
@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let invoice of invoices; index as i">
-      <th scope="row">{{ i + 1 }}</th>
+      <th scope="row">{{ invoice._id }}</th>
       <td>{{ invoice.date }}</td>
       <td>{{ invoice.hour }}</td>
       <td>{{ invoice.consumption }}</td>

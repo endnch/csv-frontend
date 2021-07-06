@@ -38,4 +38,12 @@ export class InvoiceService {
       .put(url, invoice, this.httpOptions)
       .pipe(tap((_) => console.log(`updated invoice id=${invoice._id}`)));
   }
+
+  deleteInvoice(invoice: Invoice): Observable<Invoice> {
+    const url = `http://localhost:8000/api/csv/invoice/${invoice._id}`;
+
+    return this.http
+      .delete<Invoice>(url, this.httpOptions)
+      .pipe(tap((_) => console.log(`deleted invoice id=${invoice._id}`)));
+  }
 }
