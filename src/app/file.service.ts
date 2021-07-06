@@ -81,4 +81,23 @@ export class FileService {
       )
       .pipe(tap((_) => console.log(`deleted row name=${name} index=${index}`)));
   }
+
+  createRow(row: Row, name: string): Observable<any> {
+    const url = `http://localhost:8000/api/csv/store/${name}`;
+
+    return this.http
+      .post(
+        url,
+        {
+          method: 'POST',
+          date: row.Fecha,
+          hour: row.Hora,
+          consumption: row.Consumo,
+          price: row.Precio,
+          costPerHour: row.Coste,
+        },
+        this.httpOptions
+      )
+      .pipe(tap((_) => console.log(`created new row in filename=${name}`)));
+  }
 }

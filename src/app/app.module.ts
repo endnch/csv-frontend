@@ -19,6 +19,7 @@ import { UploadComponent } from './upload/upload.component';
 import { FileDetailComponent } from './file-detail/file-detail.component';
 import { FileRowComponent } from './file-row/file-row.component';
 import { CreateInvoiceComponent } from './create-invoice/create-invoice.component';
+import { CreateRowComponent } from './create-row/create-row.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CreateInvoiceComponent } from './create-invoice/create-invoice.componen
     FileDetailComponent,
     FileRowComponent,
     CreateInvoiceComponent,
+    CreateRowComponent,
   ],
   imports: [
     BrowserModule,

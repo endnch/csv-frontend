@@ -10,6 +10,7 @@ import { UploadComponent } from './upload/upload.component';
 import { FileDetailComponent } from './file-detail/file-detail.component';
 import { FileRowComponent } from './file-row/file-row.component';
 import { CreateInvoiceComponent } from './create-invoice/create-invoice.component';
+import { CreateRowComponent } from './create-row/create-row.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/invoices', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'invoice/:id', component: InvoiceDetailComponent },
   { path: 'files', component: FilesComponent },
   { path: 'file/:name', component: FileDetailComponent },
+  { path: 'file/:name/new', component: CreateRowComponent },
   { path: 'file/:name/:index', component: FileRowComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'createInvoice', component: CreateInvoiceComponent },

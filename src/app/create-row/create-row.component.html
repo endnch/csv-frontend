@@ -1,0 +1,51 @@
+<div class="container" *ngIf="row">
+  <form>
+    <div class="form-group">
+      <label for="invoice-date">Invoice date: </label>
+      <input
+        class="form-control"
+        name="invoice-date"
+        id="invoice-date"
+        [(ngModel)]="row.Fecha"
+        placeholder="date"
+      />
+
+      <label for="invoice-hour">Invoice hour: </label>
+      <input
+        class="form-control"
+        name="invoice-hour"
+        id="invoice-hour"
+        [(ngModel)]="row.Hora"
+        placeholder="hour"
+      />
+
+      <label for="invoice-consumption">Invoice consumption: </label>
+      <input
+        class="form-control"
+        name="invoice-consumption"
+        id="invoice-consumption"
+        [(ngModel)]="row.Consumo"
+        placeholder="consumption"
+      />
+
+      <label for="invoice-price">Invoice price: </label>
+      <input
+        class="form-control"
+        name="invoice-price"
+        id="invoice-price"
+        [(ngModel)]="row.Precio"
+        placeholder="price"
+      />
+
+      <label for="invoice-costPerHour">Invoice costPerHour: </label>
+      <input
+        class="form-control"
+        name="invoice-costPerHour"
+        id="invoice-costPerHour"
+        [(ngModel)]="row.Coste"
+        placeholder="costPerHour"
+      />
+    </div>
+  </form>
+  <button class="btn btn-primary" (click)="create()">Create</button>
+</div>
