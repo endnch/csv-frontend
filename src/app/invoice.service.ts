@@ -46,4 +46,14 @@ export class InvoiceService {
       .delete<Invoice>(url, this.httpOptions)
       .pipe(tap((_) => console.log(`deleted invoice id=${invoice._id}`)));
   }
+
+  createInvoice(invoice: Invoice): Observable<any> {
+    const url = `http://localhost:8000/api/csv/invoice`;
+
+    return this.http
+      .post(url, invoice, this.httpOptions)
+      .pipe(
+        tap((res: any) => console.log(`created invoice id=${res.data._id}`))
+      );
+  }
 }
